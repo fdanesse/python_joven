@@ -1,0 +1,18 @@
+<div class='main-container'>
+<!--<div id='home_button'><a routerLink='/home'><i class="fa fa-home fa-2x"></i></a></div>-->
+<div class='container-fluid'>
+  <div class="toolbar">
+    <button id='point1' class='item' [disabled]='true'>...</button>
+    <button id='first' class='item' (click)='previous()'><span aria-hidden="true">&laquo;</span></button>
+    <button class='item itemImg' *ngFor='let item of pictures'
+      id={{item[1]}} (click)='clicked($event)'>
+      {{item[0]}}</button>
+    <button id='last' class='item' (click)='next()'><span aria-hidden="true">&raquo;</span></button>
+    <button id='point2' class='item' [disabled]='true'>...</button>
+  </div>
+    <figure>
+      <!-- FIXME: <figcaption></figcaption> -->
+      <img [src]='imgSrc'>
+    </figure>
+  </div>
+</div>

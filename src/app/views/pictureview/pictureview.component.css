@@ -1,0 +1,136 @@
+.main-container {
+  width: 100% !important;
+  min-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: rgb(29, 82, 82);
+}
+
+.container-fluid {
+  padding: 5px !important;
+  margin: auto !important;
+  display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	-webkit-justify-content: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.toolbar {
+  padding: 5px !important;
+  margin: 0 !important;
+  background-color: transparent;
+  display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-webkit-justify-content: center;
+  justify-content: center;
+}
+
+.item {
+  min-width: 28px !important;
+  max-width: 28px !important;
+  min-height: 28px !important;
+  max-height: 28px !important;
+  background-color: rgba(255,255,255,0.8);
+  display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-webkit-justify-content: center;
+  justify-content: center;
+  align-items: center;
+  border: 0.05em rgba(128,128,128,0.5) solid;
+  border-left-width: 0.01em rgba(128,128,128,0.5) solid;
+  border-right-width: 0.01em rgba(128,128,128,0.5) solid;
+  transition: background-color 0.3s;
+}
+
+.item h6 {
+  text-align: center;
+  margin: auto;
+}
+
+.item:hover {
+  cursor: pointer;
+  background-color: rgba(255,255,255,0.9);
+}
+
+#point1, #point2 {
+  background-color: rgba(255,255,255,0.7);
+  color: black;
+}
+
+#first, #point1 {
+  border-radius: 15% 0% 0% 15%;
+}
+
+#last, #point2 {
+  border-radius: 0% 15% 15% 0%;
+}
+
+figure {
+  padding: 0;
+  margin: auto;
+  margin-top: 5px;
+  text-align: center;
+}
+
+img {
+  height: auto;
+  margin: auto;
+  max-height: 100vh;
+  max-width: 100%;
+}
+
+.itemImg-selected {
+  background-color: rgba(255,255,255,1.0);
+}
+
+/*
+#home_button {
+	float:left;
+	margin: 0.4em;
+	position: absolute;
+	z-index: 1;
+}
+
+.fa-home:hover {
+  cursor: pointer;
+  color: orangered;
+  text-shadow: 0.025em 0.025em 0.025em black !important;
+}
+*/
+
+/*
+@-moz-keyframes fading {
+	0%{
+    display:none;
+    opacity:0.0;}
+	100%{
+    opacity:1.0;
+    display:block;
+  }
+}
+@-webkit-keyframes fading {
+	0%{
+    display:none;
+    opacity:0.0;}
+	100%{
+    opacity:1.0;
+    display:block;
+  }
+}
+@keyframes fading {
+	0%{
+    display:none;
+    opacity:0.0;}
+	100%{
+    opacity:1.0;
+    display:block;
+  }
+}
+*/
