@@ -1,12 +1,10 @@
 <div id='camisetas' class='hidden-sm-down'>
-  <img src="/assets/python_joven/imgs/image3.png">
-  <img src="/assets/python_joven/imgs/image1.png">
-  <img src="/assets/python_joven/imgs/image2.png">
+  <img *ngFor="let key of Object.keys(camisetas)" src={{camisetas[key]}}>
 </div>
 
 <div class='container-fluid'>
 <header class="row"
-  [style.background-image]="'url(' + '/assets/python_joven/imgs/header.png' + ')'">
+  [style.background-image]="'url(' + '/assets/imgs/header.png' + ')'">
 
   <div id="header_1" class="col-md-3">
     <div>
@@ -16,19 +14,19 @@
 
     <figure class="logo-figure">
       <img class="logo-img"
-        [style.background-image]="'url(' + '/assets/python_joven/imgs/01.png' + ')'">
+        [style.background-image]="'url(' + '/assets/imgs/01.png' + ')'">
       <img class="logo-img"
-        [style.background-image]="'url(' + '/assets/python_joven/imgs/02.png' + ')'">
+        [style.background-image]="'url(' + '/assets/imgs/02.png' + ')'">
       <img class="logo-img"
-        [style.background-image]="'url(' + '/assets/python_joven/imgs/03.png' + ')'">
+        [style.background-image]="'url(' + '/assets/imgs/03.png' + ')'">
       <img class="logo-img"
-        [style.background-image]="'url(' + '/assets/python_joven/imgs/04.png' + ')'">
+        [style.background-image]="'url(' + '/assets/imgs/04.png' + ')'">
       <img class="logo-img"
-        [style.background-image]="'url(' + '/assets/python_joven/imgs/05.png' + ')'">
+        [style.background-image]="'url(' + '/assets/imgs/05.png' + ')'">
       <img class="logo-img"
-        [style.background-image]="'url(' + '/assets/python_joven/imgs/06.png' + ')'">
+        [style.background-image]="'url(' + '/assets/imgs/06.png' + ')'">
       <img class="logo-img"
-        [style.background-image]="'url(' + '/assets/python_joven/imgs/07.png' + ')'">
+        [style.background-image]="'url(' + '/assets/imgs/07.png' + ')'">
     </figure>
 
   </div>
@@ -55,30 +53,30 @@
 			<h1>Destacados</h1>
 			<div id="code_in_flex">
 			<figure>
-			    <img class="premiados" src="/assets/python_joven/imgs/Agustin_Zubiaga.png">
-          <figcaption><img class="fa fa-spin" src="/assets/python_joven/imgs/og-image.png">
+			    <img class="premiados" src="/assets/imgs/Agustin_Zubiaga.png">
+          <figcaption><img class="fa fa-spin" src="/assets/imgs/og-image.png">
             Agustín Zubiaga<br>
             <a href="https://www.google-melange.com/archive/gci/2012" target="_blank">(google code-in 2012)</a>
           </figcaption>
 			</figure>
 			<figure>
-			    <img class="premiados" src="/assets/python_joven/imgs/Ignacio_Rodriguez.png">
-          <figcaption><img class="fa fa-spin" src="/assets/python_joven/imgs/og-image.png">
+			    <img class="premiados" src="/assets/imgs/Ignacio_Rodriguez.png">
+          <figcaption><img class="fa fa-spin" src="/assets/imgs/og-image.png">
             Ignacio Rodriguez<br>(google code-in
             <a href="https://www.google-melange.com/archive/gci/2013" target="_blank">2013</a> y
             <a href="https://www.google-melange.com/archive/gci/2014" target="_blank">2014</a>)
           </figcaption>
 			</figure>
 			<figure>
-			    <img class="premiados" src="/assets/python_joven/imgs/Ezequiel_Pereyra.png">
-          <figcaption><img class="fa fa-spin" src="/assets/python_joven/imgs/og-image.png">
+			    <img class="premiados" src="/assets/imgs/Ezequiel_Pereyra.png">
+          <figcaption><img class="fa fa-spin" src="/assets/imgs/og-image.png">
             Ezequiel Pereyra<br>
             <a href="https://codein.withgoogle.com/archive/2015/" target="_blank">(google code-in 2015)</a>
           </figcaption>
 			</figure>
 			<figure>
-			    <img class="premiados" src="/assets/python_joven/imgs/Cristian_Garcia.png">
-          <figcaption><img class="fa fa-spin" src="/assets/python_joven/imgs/og-image.png">
+			    <img class="premiados" src="/assets/imgs/Cristian_Garcia.png">
+          <figcaption><img class="fa fa-spin" src="/assets/imgs/og-image.png">
             Cristian García<br>
             <a href="https://codein.withgoogle.com/archive/2016/" target="_blank">(google code-in 2016)</a>
           </figcaption>
@@ -88,12 +86,13 @@
 
 		<section id="contenido" class="col-md-9">
       <h1>Videos:</h1>
+      <label id="videoLabel">{{videoLabel}}</label>
       <div class='row container-media'>
         <div class='media-item' *ngFor='let d of videos' id={{d}}
           (click)='changeVideo($event)' data-toggle="tooltip"
           data-placement="bottom" title={{d}}></div>
       </div>
-      <video video autobuffer controls='true' type="video/webm" autoplay='true'></video>
+      <video video autobuffer controls='true' type="video/webm" autoplay='true' src={{videoSrc}}></video>
       <h1>Fotografías:</h1>
       <div class='row fotos'>
         <div class='col-md-6 fotos1'>
@@ -127,9 +126,22 @@
             <h5>Cierre:</h5>
             <li class='link' (click)='goPictures($event)'>Diciembre 2014</li>
             <li class='link' (click)='goPictures($event)'>Agosto 2015</li>
+            <li class='link' (click)='goPictures($event)'>Varias</li>
+            <li class='link' (click)='goPictures($event)'>Algo de google</li>
           </ul>
         </div>
       </div>
+      <h1>Audios:</h1>
+      <label id="audioLabel">{{audioLabel}}</label>
+      <div class='row container-media'>
+        <audio id='audioplayer' preload='none' autoplay='none' controls='true' src={{audioSrc}} type="audio/mp3"></audio>
+      </div>
+      <div class='row container-media'>
+        <div class='media-item' *ngFor='let key of Object.keys(audios)' id={{key}}
+          (click)='changeAudio($event)' data-toggle="key"
+          data-placement="bottom" title={{key}}></div>
+      </div>
+      <h1>Notas:</h1>
     </section>
 
     <!--
@@ -178,6 +190,9 @@
 
       JAMedia OLPC France
       https://olpc-france.org/blog/2010/06/jamedia-encore-un-point-pour-luruguay/
+
+      Ignacio MEC:
+      http://www.mec.gub.uy/innovaportal/v/46519/2/mecweb/ignacio-rodriguez?parentid=44653
     -->
 </main>
 

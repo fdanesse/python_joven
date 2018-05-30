@@ -1,0 +1,7 @@
+{
+  "/Assets/*": {
+    "target": "https://firebasestorage.googleapis.com/v0/b/pythonjoven-c1888.appspot.com/o/",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

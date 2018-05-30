@@ -11,8 +11,8 @@
     <button id='point2' class='item' [disabled]='true'>...</button>
   </div>
     <figure>
-      <!-- FIXME: <figcaption></figcaption> -->
-      <img [src]='imgSrc'>
+      <img *ngIf='imgSrc' [src]='imgSrc'>
+      <figcaption *ngIf='!imgSrc'>Cargando...</figcaption>
     </figure>
   </div>
 </div>

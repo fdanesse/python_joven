@@ -46,7 +46,7 @@ a:hover, .link:hover {
 
 header {
   height: auto;
-	/*background-image: url('./assets/imgs/python_joven/header.png');*/
+	/*background-image: url('./assets/imgs/header.png');*/
   background-size:cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -217,6 +217,16 @@ video, .imgView {
   margin: 0;
   margin-left: 10%;
   margin-right: 10%;
+}
+
+label {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+#audioplayer {
+  width: 80%;
 }
 
 .container-media {

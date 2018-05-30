@@ -9,6 +9,10 @@ import { PictureviewComponent } from './views/pictureview/pictureview.component'
 import { PicturesService } from './services/pictures.service';
 import { NotfoundComponent } from './views/notfound/notfound.component';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { environment } from '../environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +23,9 @@ import { NotfoundComponent } from './views/notfound/notfound.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseconf),
+    AngularFireStorageModule
   ],
   providers: [PicturesService],
   bootstrap: [AppComponent]

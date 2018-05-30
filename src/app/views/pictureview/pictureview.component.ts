@@ -1,6 +1,7 @@
 import { Component, AfterViewInit, OnDestroy } from '@angular/core';
 import { PicturesService } from '../../services/pictures.service';
 import { Subscription } from 'rxjs/Subscription';
+import { AngularFireStorage } from 'angularfire2/storage';
 
 
 @Component({
@@ -14,10 +15,12 @@ export class PictureviewComponent implements AfterViewInit, OnDestroy {
   items = undefined;
   pictures = [];
   currentItem: HTMLButtonElement = undefined;
-  imgSrc: string;
+  imgSrc = '';
   picturesobs: Subscription;
 
-  constructor(public picturesService: PicturesService) {
+  constructor(
+    public picturesService: PicturesService,
+    private storage: AngularFireStorage) {
     this.picturesobs = this.picturesService.obs.subscribe(data => {
       const obj = Object.assign(data);
       const dirpath = obj['path'];
@@ -94,7 +97,20 @@ export class PictureviewComponent implements AfterViewInit, OnDestroy {
       b3.style.backgroundColor = 'rgba(255,255,255,0.1)';
     }
 
-    this.imgSrc = this.currentItem.id;
+    this.getImage(this.currentItem.id);
+  }
+
+  getImage (path: string) {
+    this.imgSrc = '';
+    const ref = this.storage.storage.ref('Assets/Imagenes/' + path);
+    ref.getDownloadURL()
+      .then(success => {
+        this.imgSrc = success; // FIXME cross origin: success.replace('https://firebasestorage.googleapis.com/v0/b/pythonjoven-c1888.appspot.com/o/', '');
+      })
+      .catch(
+        err => {
+          console.log('ERROR getImage:', err);
+        });
   }
 
   ngAfterViewInit() {

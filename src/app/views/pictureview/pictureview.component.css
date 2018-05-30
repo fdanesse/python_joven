@@ -90,6 +90,10 @@ img {
   background-color: rgba(255,255,255,1.0);
 }
 
+figcaption {
+  color: white;
+}
+
 /*
 #home_button {
 	float:left;
@@ -102,35 +106,5 @@ img {
   cursor: pointer;
   color: orangered;
   text-shadow: 0.025em 0.025em 0.025em black !important;
-}
-*/
-
-/*
-@-moz-keyframes fading {
-	0%{
-    display:none;
-    opacity:0.0;}
-	100%{
-    opacity:1.0;
-    display:block;
-  }
-}
-@-webkit-keyframes fading {
-	0%{
-    display:none;
-    opacity:0.0;}
-	100%{
-    opacity:1.0;
-    display:block;
-  }
-}
-@keyframes fading {
-	0%{
-    display:none;
-    opacity:0.0;}
-	100%{
-    opacity:1.0;
-    display:block;
-  }
 }
 */
