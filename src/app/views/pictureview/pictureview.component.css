@@ -94,7 +94,6 @@ figcaption {
   color: white;
 }
 
-/*
 #home_button {
 	float:left;
 	margin: 0.4em;
@@ -102,9 +101,12 @@ figcaption {
 	z-index: 1;
 }
 
-.fa-home:hover {
+.fa-home {
+  color: black;
+}
+
+.fa-home:hover,.fa-linkedin:hover, .fa-youtube-square:hover {
   cursor: pointer;
-  color: orangered;
+  color: white;
   text-shadow: 0.025em 0.025em 0.025em black !important;
 }
-*/

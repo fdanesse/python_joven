@@ -22,7 +22,7 @@ export class PictureviewComponent implements AfterViewInit, OnDestroy {
     public picturesService: PicturesService,
     private storage: AngularFireStorage) {
     this.picturesobs = this.picturesService.obs.subscribe(data => {
-      const obj = Object.assign(data);
+      const obj = Object.assign({}, data);
       const dirpath = obj['path'];
       const files = obj['files'];
       this.pictures = [];

@@ -44,7 +44,9 @@ export class PicturesService {
     'Varias': {
       path: 'Varias/', files: 8},
     'Algo de google': {
-      path: 'Google/', files: 44}
+      path: 'Google/', files: 44},
+    'Relanzamiento - julio - 2018': {
+      path: 'Relanzamiento2018/', files: 15}
   };
 
   constructor() { }
