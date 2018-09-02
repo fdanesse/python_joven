@@ -102,7 +102,7 @@ export class PictureviewComponent implements AfterViewInit, OnDestroy {
 
   getImage (path: string) {
     this.imgSrc = '';
-    const ref = this.storage.storage.ref('Assets/Imagenes/' + path);
+    const ref = this.storage.storage.ref(path);
     ref.getDownloadURL()
       .then(success => {
         this.imgSrc = success; // FIXME cross origin: success.replace('https://firebasestorage.googleapis.com/v0/b/pythonjoven-c1888.appspot.com/o/', '');

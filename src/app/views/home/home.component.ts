@@ -1,15 +1,16 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { PicturesService } from '../../services/pictures.service';
+import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFireStorage } from 'angularfire2/storage';
+import { FilesService } from '../../services/files.service';
+import { PicturesService } from '../../services/pictures.service';
 
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
 
   public copyrigth = '';
   public videoSrc = '';
@@ -41,7 +42,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
   };
   public audioLabel = '';
 
+  private imgsSubscription;
+  public sections = Object.assign({}, null);
+
   constructor(
+    public filesService: FilesService,
     public picturesService: PicturesService,
     private router: Router,
     private storage: AngularFireStorage
@@ -55,6 +60,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     const d = new Date();
     this.copyrigth = d.getFullYear() + '';
     setInterval(this.run_slider, 6000);
+
+    this.getimagenes();
   }
 
   ngAfterViewInit() {
@@ -183,9 +190,27 @@ export class HomeComponent implements OnInit, AfterViewInit {
         });
   }
 
-  goPictures(event) {
-    const path = event.target.innerHTML;
-    this.picturesService.setPath(path);
+  goPictures(section, titulo, path, files) {
+    const refPath = 'Assets/' + 'Imagenes/' + path;
+    this.picturesService.setPath(refPath, titulo, files);
     this.router.navigate(['/pictureview']);
   }
+
+  ngOnDestroy() {
+    if (this.imgsSubscription) {
+      this.imgsSubscription.unsubscribe();
+    }
+  }
+
+  getimagenes() {
+    if (this.imgsSubscription) {
+      this.imgsSubscription.unsubscribe();
+    }
+    this.imgsSubscription = this.filesService.getDocument('assets', 'imagenes').
+      subscribe(data => {
+        this.sections = Object.assign({}, data);
+        // FIXME: Ordenarlos en: Antecedentes Origen Desarrollo Consolidación Cierre Relanzamiento 2018
+      });
+  }
+
 }
