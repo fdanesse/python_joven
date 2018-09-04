@@ -10,6 +10,7 @@
     <div>
       <h1>python_joven</h1>
       <h3>#uruguay 2009 - 2014</h3>
+      <h3>2018 ...</h3>
     </div>
 
     <figure class="logo-figure">
@@ -92,6 +93,9 @@
       <figure>
         <img class="premiados" src="/assets/imgs/6.jpg">
       </figure>
+      <figure>
+        <img class="premiados" src="https://firebasestorage.googleapis.com/v0/b/pythonjoven-c1888.appspot.com/o/Assets%2FImagenes%2FRelanzamiento2018%2F1.jpg?alt=media&token=e1af8157-e2d4-4d22-bf65-79daeb3cb9df">
+      </figure>
       </div>
 		</section>
 
@@ -105,10 +109,10 @@
       </div>
       <video video autobuffer controls='true' type="video/webm" src={{videoSrc}}></video>
       <h1>Fotografías:</h1>
-      <div class='row fotos'>
-        <div class='col-md-6 fotos1' *ngFor='let section of Object.keys(sections)'>
+      <div class='row fotos' *ngFor='let order of orderlist'>
+        <div class='col-md-6 fotos1' *ngFor='let section of order; let i = index'>
           <ul>
-            <h5>{{section}}:</h5>
+            <h5>{{i+1}}- {{section}}:</h5>
             <li class='link' *ngFor='let _dict of sections[section]'
               (click)="goPictures(section, _dict['Titulo'], _dict['path'], _dict['files'])">{{_dict['Titulo']}}</li>
           </ul>

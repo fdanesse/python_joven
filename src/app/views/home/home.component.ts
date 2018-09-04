@@ -43,6 +43,8 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   public audioLabel = '';
 
   private imgsSubscription;
+  private sectionorderSubscription;
+  public orderlist = new Array();
   public sections = Object.assign({}, null);
 
   constructor(
@@ -60,7 +62,7 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
     const d = new Date();
     this.copyrigth = d.getFullYear() + '';
     setInterval(this.run_slider, 6000);
-
+    this.getsectionorder();
     this.getimagenes();
   }
 
@@ -202,6 +204,16 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
     }
   }
 
+  getsectionorder() {
+    if (this.sectionorderSubscription) {
+      this.sectionorderSubscription.unsubscribe();
+    }
+    this.sectionorderSubscription = this.filesService.getDocument('assets', 'sectionorder').
+      subscribe(data => {
+        this.orderlist = new Array(Object.assign({}, data)['sectionorder']);
+      });
+  }
+
   getimagenes() {
     if (this.imgsSubscription) {
       this.imgsSubscription.unsubscribe();
@@ -209,7 +221,6 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
     this.imgsSubscription = this.filesService.getDocument('assets', 'imagenes').
       subscribe(data => {
         this.sections = Object.assign({}, data);
-        // FIXME: Ordenarlos en: Antecedentes Origen Desarrollo Consolidación Cierre Relanzamiento 2018
       });
   }
 
