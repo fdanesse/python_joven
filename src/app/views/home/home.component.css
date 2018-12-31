@@ -47,9 +47,9 @@ a:hover, .link:hover {
 header {
   height: auto;
 	/*background-image: url('./assets/imgs/header.png');*/
-  background-size:cover;
+  /*background-size:cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center;*/
 }
 
 /* IZQUIERDA */
@@ -69,14 +69,15 @@ header {
   width: 100%;
   height: auto;
   margin: 0;
-  margin-top: 90px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   text-align: center;
 }
 
 .logo-img {
 	display:none;
-  width: 180px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
   background-size:cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -112,21 +113,30 @@ header {
 
 /* DERECHA */
 #header_2 {
-	color: white;
-	padding-top: 20px;
-	padding-bottom: 16px;
-	background-color: rgba(0, 0, 0, 0.3);
+  height: auto;
+	/*background-image: url('./assets/imgs/header.png');*/
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+	/*padding-top: 20px;
+	padding-bottom: 16px;*/
+	/*background-color: rgba(0, 0, 0, 0.3);*/
 }
-#header_2 h1 {
+
+#descripcion {
+  color: white;
+}
+/*
+#descripcion h1 {
 	font-size: 3.2em;
-}
-#header_2 h1, #header_2 hr, #header_2 p {
+}*/
+#descripcion h1, #descripcion hr, #descripcion p {
 	margin: 10px;
 	text-align: left;
 	font-family: 'Tangerine', cursive;
 }
-#header_2 p {
-	font-size: 2.4em;
+#descripcion p {
+	font-size: 2.0em;
 	-moz-column-count: 3;
 	-moz-column-gap: 15px;
 	-webkit-column-count: 3;
@@ -161,7 +171,15 @@ header {
 
 #code_in_flex figure {
 	margin: auto;
-	padding: 0;
+  padding: 0;
+  display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	-webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 #code_in_flex figcaption {
@@ -181,8 +199,8 @@ figcaption a:hover {
 }
 
 .premiados {
-	max-width: 205px;
-	max-height: 205px;
+	max-width: 150px;
+	max-height: 150px;
 	background-position: center;
 	background-size: cover;
 	border-radius: 5px;
@@ -353,7 +371,7 @@ footer {
   padding: 5px;
   margin: 0 !important;
 }
-
+/*
 #camisetas {
 	display: block;
 	clear:both;
@@ -381,15 +399,15 @@ footer {
 	box-shadow: 5px 5px 5px 2px rgba(0,0,0,0.3);
 	top: 15px;
   right: 15px;
-}
-
+}*/
+/*
 #camisetas img {
   width: 60px;
   height: 60px;
 }
-
+*/
 @media (max-width: 768px) {
-	#header_2 p{
+	#descripcion p{
 		-moz-column-count: 1;
 		-webkit-column-count: 1;
 		column-count: 1;

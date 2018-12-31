@@ -1,16 +1,15 @@
-<div id='camisetas' class='hidden-sm-down'>
+<!--<div id='camisetas' class='hidden-sm-down'>
   <img *ngFor="let key of Object.keys(camisetas)" src={{camisetas[key]}}>
-</div>
+</div>-->
 
 <div class='container-fluid'>
-<header class="row"
-  [style.background-image]="'url(' + '/assets/imgs/header.png' + ')'">
+<header class="row">
 
   <div id="header_1" class="col-md-3">
     <div>
       <h1>python_joven</h1>
       <h3>#uruguay 2009 - 2014</h3>
-      <h3>2018 ...</h3>
+      <h3>2018, 2019 ...</h3>
     </div>
 
     <figure class="logo-figure">
@@ -32,20 +31,7 @@
 
   </div>
 
-  <div id="header_2" class="col-md-9">
-    <div>
-      <h1>Descripción:</h1>
-    </div>
-    <div>
-      <hr>
-      <p>
-        Comunidad uruguaya de jóvenes entusiastas de la programación, unidos en torno a python y el software libre, buscando llegar lo más lejos posible en el aprendizaje sobre el desarrollo de software.
-      <br>
-        Compartimos el conocimiento adquirido brindando oportunidades de aprendizaje a aquellos jóvenes que estén dispuestos a dedicar su tiempo a esta tarea.
-      </p>
-      <hr>
-    </div>
-  </div>
+  <div id="header_2" class="col-md-9" [style.background-image]="'url(' + '/assets/imgs/header.png' + ')'"></div>
 
 </header>
 
@@ -53,35 +39,35 @@
 		<section id="code-in" class="col-md-3">
 			<h1>Destacados</h1>
 			<div id="code_in_flex">
-			<figure>
-			    <img class="premiados" src="/assets/imgs/Agustin_Zubiaga.png">
-          <figcaption><img class="fa fa-spin" src="/assets/imgs/og-image.png">
-            Agustín Zubiaga<br>
-            <a href="https://www.google-melange.com/archive/gci/2012" target="_blank">(google code-in 2012)</a>
-          </figcaption>
-			</figure>
-			<figure>
-			    <img class="premiados" src="/assets/imgs/Ignacio_Rodriguez.png">
-          <figcaption><img class="fa fa-spin" src="/assets/imgs/og-image.png">
-            Ignacio Rodriguez<br>(google code-in
-            <a href="https://www.google-melange.com/archive/gci/2013" target="_blank">2013</a> y
-            <a href="https://www.google-melange.com/archive/gci/2014" target="_blank">2014</a>)
-          </figcaption>
-			</figure>
-			<figure>
-			    <img class="premiados" src="/assets/imgs/Ezequiel_Pereyra.png">
-          <figcaption><img class="fa fa-spin" src="/assets/imgs/og-image.png">
-            Ezequiel Pereyra<br>
-            <a href="https://codein.withgoogle.com/archive/2015/" target="_blank">(google code-in 2015)</a>
-          </figcaption>
-			</figure>
-			<figure>
-			    <img class="premiados" src="/assets/imgs/Cristian_Garcia.png">
+        <figure>
+          <img class="premiados" src="/assets/imgs/Cristian_Garcia.png">
           <figcaption><img class="fa fa-spin" src="/assets/imgs/og-image.png">
             Cristian García<br>
             <a href="https://codein.withgoogle.com/archive/2016/" target="_blank">(google code-in 2016)</a>
           </figcaption>
-      </figure>
+        </figure>
+        <figure>
+          <img class="premiados" src="/assets/imgs/Ezequiel_Pereyra.png">
+          <figcaption><img class="fa fa-spin" src="/assets/imgs/og-image.png">
+            Ezequiel Pereyra<br>
+            <a href="https://codein.withgoogle.com/archive/2015/" target="_blank">(google code-in 2015)</a>
+          </figcaption>
+        </figure>
+        <figure>
+          <img class="premiados" src="/assets/imgs/Ignacio_Rodriguez.png">
+          <figcaption><img class="fa fa-spin" src="/assets/imgs/og-image.png">
+            Ignacio Rodriguez<br>
+            <a href="https://www.google-melange.com/archive/gci/2013" target="_blank">(google code-in 2013)</a><br>
+            <a href="https://www.google-melange.com/archive/gci/2014" target="_blank">(google code-in 2014)</a>
+          </figcaption>
+        </figure>
+        <figure>
+            <img class="premiados" src="/assets/imgs/Agustin_Zubiaga.png">
+            <figcaption><img class="fa fa-spin" src="/assets/imgs/og-image.png">
+              Agustín Zubiaga<br>
+              <a href="https://www.google-melange.com/archive/gci/2012" target="_blank">(google code-in 2012)</a>
+            </figcaption>
+        </figure>
       </div>
 
       <div class='imgExtra'>
@@ -100,6 +86,18 @@
 		</section>
 
 		<section id="contenido" class="col-md-9">
+      <div>
+        <h1>Descripción:</h1>
+      </div>
+      <div id="descripcion">
+        <hr>
+        <p>
+          Comunidad uruguaya de jóvenes entusiastas de la programación, unidos en torno a python y el software libre, buscando llegar lo más lejos posible en el aprendizaje sobre el desarrollo de software.
+        <br>
+          Compartimos el conocimiento adquirido brindando oportunidades de aprendizaje a aquellos jóvenes que estén dispuestos a dedicar su tiempo a esta tarea.
+        </p>
+        <hr>
+      </div>
       <h1>Videos:</h1>
       <label id="videoLabel">{{videoLabel}}</label>
       <div class='row container-media'>
@@ -131,6 +129,7 @@
       <h1>Notas:</h1>
       <div class='row container-notas'>
       <div class='col-md-3 notas'>
+        <a target='_blank' href="https://www.elpais.com.uy/domingo/renace-proyecto-robots-ceibalitas.html">Relanzamiento 2018</a>
         <a target='_blank' href="https://www.elpais.com.uy/vida-actual/adolescente-uruguayo-google-le-pidio-deje-hackearlo.html">Google pide detener hackeo.</a>
         <a target='_blank' href="https://www.elpais.com.uy/informacion/proyecto-acerco-cinco-uruguayos-google.html">Proyecto python_joven</a>
         <a target='_blank' href="https://www.elpais.com.uy/vida-actual/uruguayo-descubrio-error-google-recompensado-us.html">Uruguayo descubre vulnerabilidad en google</a>
